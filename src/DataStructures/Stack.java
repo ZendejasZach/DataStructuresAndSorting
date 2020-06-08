@@ -42,6 +42,7 @@ public class Stack {
         return array;
     }
 
+    //push and pop functions
     private static int[] pop(int[] array) {
         int size = Array.getLength(array) - 1;
         int[] newArray = new int[size];
@@ -52,7 +53,6 @@ public class Stack {
         return newArray;
     }
 
-    // push and pop methods
     private static int[] push(int[] array, int num) {
         // establish parameters of the stack
         int maxsize = Array.getLength(array);
