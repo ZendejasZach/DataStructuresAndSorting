@@ -10,35 +10,44 @@ public class Stack {
         int run = 1;
         // create pointer to make working with Array variable easier
 
-        System.out.println("Please select an operation:");
-        System.out.println("[1] Push");
-        System.out.println("[2] Pop");
-        System.out.println("[0] Return to Main Menu");
+        while(run == 1){
+            System.out.println("Please select an operation:");
+            System.out.println("[1] Push");
+            System.out.println("[2] Pop");
+            System.out.println("[0] Return to Main Menu");
 
-        //get input from user
-        Scanner in = new Scanner(System.in);
-        int s = Integer.parseInt(in.nextLine());
+            //get input from user
+            Scanner in = new Scanner(System.in);
+            int s = Integer.parseInt(in.nextLine());
 
-        switch (s){
-            case 1:
-                int[] pushArray = new int[Array.getLength(array) + 1];
-                System.out.println("What would you like to push?");
-                int num = Integer.parseInt(in.nextLine());
-                pushArray = push(array, num);
-                System.out.println("The array is now: " + Arrays.toString(pushArray));
-                stack(pushArray);
-                break;
-            case 2:
-                int[] popArray = new int[Array.getLength(array) - 1];
-                System.out.println("Initiating pop");
-                popArray = pop(array);
-                System.out.println("The array is now: " + Arrays.toString(popArray));
-                stack(popArray);
-                break;
-            case 0:
-                return array;
+            switch (s) {
+                case 1:
+//                    int[] pushArray = new int[Array.getLength(array) + 1];
+                    System.out.println("What would you like to push?");
+                    int num = Integer.parseInt(in.nextLine());
+                    array = push(array, num);
+//                    array=pushArray;
+                    System.out.println("The array is now: " + Arrays.toString(array));
+                    break;
+
+                case 2:
+//                    int[] popArray = new int[Array.getLength(array) - 1];
+                    System.out.println("Initiating pop");
+                    array = pop(array);
+//                    array = popArray;
+                    System.out.println("The array is now: " + Arrays.toString(array));
+                    break;
+
+                case 0:
+                    run = 0;
+                    break;
+
+                default:
+                    System.out.println("Input not recognized.");
+                    break;
+
+            }
         }
-
         return array;
     }
 

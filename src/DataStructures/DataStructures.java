@@ -35,8 +35,9 @@ public class DataStructures {
             switch (s) {
                 case 1:
                     //run Stack Program
-                    stack(array);
+                    array = stack(array);
                     break;
+
                 case 0:
                     run = 0;
             }
